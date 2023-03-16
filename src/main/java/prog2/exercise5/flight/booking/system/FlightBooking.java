@@ -480,21 +480,21 @@ public class FlightBooking {
     }
 
     public void displayTripDetails(int number){
-        if(TF){
         System.out.println("Thank you for booking your flights with FLIGHT_COMPANY"+"\nYou reserved a total of " + number +" tickets.");
+        if(TF){
         for(int j=0;j<number;j++){
-            System.out.println("Here are the trip details for Passenger NO. " + j +"\nPassenger's Ticket Number: "+ ticketNumber[j]+"\nPassenger's Full Name: " + passengerFullName[j] +"\nPassenger's Age: "+passengerAge[j]+"\nPassenger's Gender: "+passengerGender[j]
-             +"\nFrom: "+ tripSource + "(" + sourceAirport +")" + "\nto " +tripDestination+"("+destinationairport+")"+"\nThe flight departs on: " +departureDate+"\nAnd the return flight is on " + returnDate+" (Changed from old returningDates to new returningDates)");
-             System.out.println("The total ticket price is: "+ totalTicketPrice +"\n\n");
-             System.out.println("IMPORTANT NOTICE: As per our policy, the return date was changed because it was less than two days apart from your departure date.");
+            
+            String T ="Here are the trip details for Passenger NO. " + j +"\nPassenger's Ticket Number: "+ ticketNumber[j]+"\nPassenger's Full Name: " + passengerFullName[j] +"\nPassenger's Age: "+passengerAge[j]+"\nPassenger's Gender: "+passengerGender[j]
+             +"\nFrom: "+ tripSource + "(" + sourceAirport +")" + "\nto " +tripDestination+"("+destinationairport+")"+"\nThe flight departs on: " +departureDate+"\nAnd the return flight is on " + returnDate+" (Changed from old returningDates to new returningDates)\nThe total ticket price is: "+ totalTicketPrice +"\n\nIMPORTANT NOTICE: As per our policy, the return date was changed because it was less than two days apart from your departure date.";
+            System.out.println(T);
             }
     } else
-    System.out.println("Thank you for booking your flights with FLIGHT_COMPANY"+"\nYou reserved a total of " + number +" tickets.");
         for(int j=0;j<number;j++){
-            System.out.println("Here are the trip details for Passenger NO. " + j +"\nPassenger's Ticket Number: "+ ticketNumber[j]+"\nPassenger's Full Name: " + passengerFullName[j] +"\nPassenger's Age: "+passengerAge[j]+"\nPassenger's Gender: "+passengerGender[j]
-             +"\nFrom: "+ tripSource + "(" + sourceAirport +")" + "\nto " +tripDestination+"("+destinationairport+")"+"\nThe flight departs on: " +departureDate+"\nAnd the return flight is on " + returnDate);
-             System.out.println("The total ticket price is: "+ totalTicketPrice +"\n\n");
-            }  
+            String F ="Here are the trip details for Passenger NO. " + j +"\nPassenger's Ticket Number: "+ ticketNumber[j]+"\nPassenger's Full Name: " + passengerFullName[j] +"\nPassenger's Age: "+passengerAge[j]+"\nPassenger's Gender: "+passengerGender[j]
+             +"\nFrom: "+ tripSource + "(" + sourceAirport +")" + "\nto " +tripDestination+"("+destinationairport+")"+"\nThe flight departs on: " +departureDate+"\nAnd the return flight is on " + returnDate;
+             System.out.println(F);
+            }
+            System.out.println("The total ticket price is: "+ totalTicketPrice +"\n\n"); 
     }
 
 }
