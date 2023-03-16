@@ -408,7 +408,7 @@ public class FlightBooking {
             System.out.println("Enter age for passenger " + (i+1) + ":");
              Age = scanner.nextInt();
             setPassengerAge(i, Age);
-            setTotalTicketPrice();
+            
 
         }
 
@@ -452,6 +452,7 @@ public class FlightBooking {
             setClassification(source, destination);
             setDepartingTicketPrice( childPassengers, adultPassengers);
             setReturnTicketPrice();
+            setTotalTicketPrice();
            
 
           scanner.close();
