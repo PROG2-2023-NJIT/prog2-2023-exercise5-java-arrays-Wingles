@@ -6,8 +6,6 @@ import java.time.Period;
 import java.util.Random;
 import java.util.Scanner;
 
-import javax.lang.model.util.ElementScanner14;
-
 
 public class FlightBooking {
     enum BookingClass{FIRST,BUSINESS,ECONOMY }
@@ -161,9 +159,9 @@ public class FlightBooking {
     {
         return passengerFullName[index];
     }
-    public void setPassengerFullName(int index, String Fullname)
+    public void setPassengerFullName(int index, String fullname)
     {
-        passengerFullName[index] = Fullname;
+        passengerFullName[index] = fullname;
     }
 
     public String getPassengerGender(int index)
@@ -171,9 +169,9 @@ public class FlightBooking {
         return passengerGender[index];
     }
 
-    public void setPassengerGender(int index, String Gender)
+    public void setPassengerGender(int index, String gender)
     {
-        passengerGender[index] = Gender;
+        passengerGender[index] = gender;
     }
 
     public int getPassengerAge(int index)
@@ -181,9 +179,9 @@ public class FlightBooking {
         return passengerAge[index];
     }
 
-    public void setPassengerAge(int index, int Age)
+    public void setPassengerAge(int index, int age)
     {
-        passengerAge[index] = Age;
+        passengerAge[index] = age;
     }
 
 
@@ -195,21 +193,21 @@ public class FlightBooking {
         switch (bookingClass) {
             case FIRST:
                 if (classification.equals("domestic"))
-                    this.departingTicketPrice = (childPassengers+adultPassengers) *345 +250;
+                    this.departingTicketPrice = (childPassengers+adultPassengers) *(345 +250);
                 else
-                    this.departingTicketPrice = (childPassengers+adultPassengers) *375 +250;
+                    this.departingTicketPrice = (childPassengers+adultPassengers) *(375 +250);
                 break;
             case BUSINESS:
                 if (classification.equals("domestic"))
-                    this.departingTicketPrice = (childPassengers+adultPassengers) *345 +150;
+                    this.departingTicketPrice = (childPassengers+adultPassengers) *(345 +250);
                 else
-                    this.departingTicketPrice = (childPassengers+adultPassengers) *375 +150;
+                    this.departingTicketPrice = (childPassengers+adultPassengers) *(345 +250);
                 break;
             case ECONOMY:
                 if (classification.equals("domestic"))
-                    this.departingTicketPrice = (childPassengers+adultPassengers) *345 +50;
+                    this.departingTicketPrice = (childPassengers+adultPassengers) *(345 +250);
                 else
-                    this.departingTicketPrice = (childPassengers+adultPassengers) *375 +50;
+                    this.departingTicketPrice = (childPassengers+adultPassengers) *(345 +250);
             default:
                 break;
         }
@@ -329,7 +327,7 @@ public class FlightBooking {
         return totalTicketPrice;
     }
     public void setTotalTicketPrice(){
-        totalTicketPrice = departingTicketPrice + returnTicketPrice;
+        totalTicketPrice = (departingTicketPrice + returnTicketPrice);
     }
     public String getTicketNumber(int index)
     {
@@ -393,21 +391,21 @@ public class FlightBooking {
 
     public void reserveTickets(int number) {
         Scanner scanner = new Scanner(System.in);
-        String FullName;
-        String Gender;
-        int Age;
+        String fullName;
+        String gender;
+        int age;
         for (int i = 0; i < number;++i) {
             System.out.println("Enter full name for passenger " + (i+1) + ":");
-             FullName = scanner.nextLine();
-            setPassengerFullName(i, FullName);
+             fullName = scanner.nextLine();
+            setPassengerFullName(i, fullName);
             
             System.out.println("Enter gender (M/F) for passenger " + (i+1) + ":");
-             Gender = scanner.nextLine();
-            setPassengerGender(i, Gender);
+             gender = scanner.nextLine();
+            setPassengerGender(i, gender);
             
             System.out.println("Enter age for passenger " + (i+1) + ":");
-             Age = scanner.nextInt();
-            setPassengerAge(i, Age);
+             age = scanner.nextInt();
+            setPassengerAge(i, age);
             
 
         }
@@ -450,7 +448,7 @@ public class FlightBooking {
          
             setTotalPassengers(child, adults);
             setClassification(source, destination);
-            setDepartingTicketPrice( childPassengers, adultPassengers);
+            setDepartingTicketPrice(child, adults);
             setReturnTicketPrice();
             setTotalTicketPrice();
            
@@ -462,7 +460,6 @@ public class FlightBooking {
     public String toString()
     {   setDepartingTicketPrice( childPassengers, adultPassengers);
         setReturnTicketPrice();
-        setTotalTicketPrice();
         setDepartureDate(departureDate);
         setReturnDate(returnDate);
         String T = "Thank you for booking your flight with "+ flightCompany+". Following are the details \nof your booking and the trip: \n\nTicket Number:"
